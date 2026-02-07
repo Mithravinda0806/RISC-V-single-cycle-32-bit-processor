@@ -1,3 +1,4 @@
+
 `timescale 1ns / 1ps
 
 module pc_module_tb;
@@ -26,21 +27,23 @@ module pc_module_tb;
 
         // Apply reset
         #10;
-        reset = 0;
+        reset = 1;
 
         // First update
         next_pc = 32'd4;
         #10;
-
+        reset=0;
         // Second update
         next_pc = 32'd8;
         #10;
 
         // Third update
-        next_pc = 32'd100;
+        next_pc = 32'd12;
         #10;
 
         $finish;
     end
 
 endmodule
+
+
